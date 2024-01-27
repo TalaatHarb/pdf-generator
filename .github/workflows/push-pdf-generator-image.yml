@@ -3,9 +3,6 @@ name: Publish PDF Generator Docker image
 on:
   push:
     branches: [ master ]
-    paths:
-      - ./**
-      - .github/workflows/push-pdf-generator-image.yml
 
 jobs:
   push_to_registry:
