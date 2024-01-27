@@ -54,7 +54,13 @@ async function generatePdfFromUrl(url) {
 
     await page.goto(url, { waitUntil: 'networkidle2' });
 
-    const pdfBuffer = await page.pdf();
+    const pdfBuffer = await page.pdf({
+        displayHeaderFooter: false,
+        margin: undefined,
+        scale: 1,
+        landscape: false,
+        printBackground: true
+    });
     await browser.close();
     
     const endTime = +new Date();
